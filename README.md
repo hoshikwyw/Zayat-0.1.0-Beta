@@ -38,12 +38,49 @@
 
 ---
 
-## 🛠️ Getting Started (Development Setup)
+### 🛠️ Development Setup
 
-Follow these steps to set up the project locally:
+1. Clone the repository
+   ```bash
+   git clone https://github.com/your-username/zayat-app.git
+   cd zayat-app
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/zayat-app.git
-cd zayat-app
+2. Install Dependencies
+   ```bash
+   npm install
 
+3. Configure Environment Variables
+   ```bash
+   cp .env.example .env
+
+4. Start Development Server
+    ```bash
+   npm run dev
+
+### 📂 Project Structure
+    
+ ```text
+    .
+    ├── src
+    │   ├── components
+    │   │   ├── pages
+    │   │   └── ui
+    │   ├── pages
+    │   │   ├── Home.tsx
+    │   │   └── About.tsx
+    │   ├── App.tsx
+    │   └── main.tsx
+    ├── public
+    │   ├── logo
+    │   └── favicon
+    └── README.md
+```
+
+### 📄 License
+
+- This project is licensed under the MIT License — see the LICENSE file for details.
+
+### 🙌 Contributing
+
+- Contributions, issues, and feature requests are welcome!
+- Feel free to open a Pull Request or Issue.
