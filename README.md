@@ -1,69 +1,56 @@
-# React + TypeScript + Vite
+# Zayat - Myanmar Travel & Culture Vlog App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Zayat Logo](https://via.placeholder.com/150) *(Add your logo here)*
 
-Currently, two official plugins are available:
+Zayat is a vlog-style application showcasing beautiful places, cultural highlights, and hidden gems across Myanmar. Inspired by traditional Burmese rest houses where travelers gather, Zayat aims to promote tourism and share Myanmar's rich heritage with the world.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+### Frontend
+- **React** with TypeScript
+- **Vite** (Build Tool)
+- **shadcn/ui** (Beautifully designed UI components)
+- **Tailwind CSS** (Utility-first CSS framework)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Backend & Storage
+- **Supabase** (PostgreSQL database, authentication, and storage)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Development Tools
+- ESLint (Code quality)
+- Prettier (Code formatting)
+- React Router (Navigation)
+- React Icons (Icon library)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 🎥 Browse high-quality travel vlogs and photo galleries
+- 🗺️ Discover locations by region/category with interactive maps
+- ✍️ User accounts for content creators
+- ⭐ Community reviews and ratings system
+- 🔍 Advanced search and filtering options
+- 📱 Mobile-responsive design
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Development Setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone the repository
+   ```bash
+   git clone https://github.com/your-username/zayat-app.git
+   cd zayat-app
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Install dependencies
+  ```bash
+   npm install
+
+3. Set up environment variables
+  ```bash
+  cp .env.example .env
+
+  Then fill in your Supabase credentials
+
+4. Start the development server
+  ```bash
+  npm run dev
+
+## ✨License
+
+- This project is licensed under the MIT License - see the LICENSE file for details.
