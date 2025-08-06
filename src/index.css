@@ -95,6 +95,6 @@
   }
 
   .title {
-    @apply font-semibold text-lg;
+    @apply font-semibold;
   }
 }
