@@ -3,9 +3,9 @@ import Navbar from "./Navbar";
 
 const MainLayout = () => {
   return (
-    <div className=" w-screen h-screen">
+    <div className=" flex flex-col justify-center items-center">
       <Navbar />
-      <div className=" w-full h-full">
+      <div className=" min-h-screen mt-[95px] px-12">
         <Outlet />
       </div>
     </div>

@@ -50,28 +50,16 @@ const Home = () => {
   }, []);
 
   console.log(vlogs);
-  console.log("media",media);
+  console.log("media", media);
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="flex flex-col items-center gap-4 justify-center w-full min-h-screen">
-        {/* <div className="w-44 h-44 rounded-md">
-          <img
-            src="/zayat.png"
-            alt=""
-            className="w-full h-full object-cover rounded-md"
-          />
-        </div>
-        <p className="text-2xl font-bold">Welcome to Zayat App</p> */}
-
-
-        <div className="grid grid-cols-2 gap-4 mt-8">
-          {vlogs.map((vlog) => (
-            <div key={vlog.id} className="w-full h-full">
-              <VlogCard vlog={vlog}  />
-            </div>
-          ))}
-        </div>
+    <div className="flex flex-col gap-4 justify-center w-full">
+      <div className="grid grid-cols-2 gap-4">
+        {vlogs.map((vlog) => (
+          <div key={vlog.id} className="w-full h-full">
+            <VlogCard vlog={vlog} />
+          </div>
+        ))}
       </div>
     </div>
   );
