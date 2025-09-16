@@ -2,13 +2,6 @@ import { Button } from "../ui/button";
 import logo2 from "../../assets/logo2.png";
 
 const VlogCard = ({ vlog }: any) => {
-  // Extract coordinates from the location URL
-  // const extractCoordinates = (url: string) => {
-  //   const match = url.match(/@([0-9.-]+),([0-9.-]+)/);
-  //   return match ? `${match[1]},${match[2]}` : "";
-  // };
-
-  // const coordinates = extractCoordinates(vlog.location);
 
   return (
     <div
@@ -31,36 +24,10 @@ const VlogCard = ({ vlog }: any) => {
           {vlog.desc}
         </p>
 
-        {/* Map */}
-        {/* {coordinates && (
-          <div className="w-full h-32 rounded-md overflow-hidden border border-border">
-            <iframe
-              src={`https://www.google.com/maps?q=${coordinates}&output=embed`}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
-        )} */}
-
         {/* Buttons */}
         <div className="w-full flex items-center justify-between mt-auto gap-2">
-          <Button
-            className="bg-gradient-to-r from-primary to-accent text-primary-foreground 
-                       shadow-md px-4 py-2 rounded-md transition-all duration-300 
-                       hover:opacity-90 hover:scale-105 active:scale-95"
-          >
-            Contact
-          </Button>
-          <Button
-            className="bg-gradient-to-r from-primary to-accent text-primary-foreground 
-                       shadow-md px-4 py-2 rounded-md transition-all duration-300 
-                       hover:opacity-90 hover:scale-105 active:scale-95"
-          >
-            View
-          </Button>
+          <Button>Contact</Button>
+          <Button>View</Button>
         </div>
       </div>
     </div>
