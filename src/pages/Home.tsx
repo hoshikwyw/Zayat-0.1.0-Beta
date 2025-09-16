@@ -53,8 +53,8 @@ const Home = () => {
   console.log("media", media);
 
   return (
-    <div className="flex flex-col gap-4 justify-center w-full">
-      <div className="grid grid-cols-2 gap-4">
+    <div className="flex flex-row gap-4 justify-center w-full">
+      <div className="grid grid-cols-4 gap-4">
         {vlogs.map((vlog) => (
           <div key={vlog.id} className="w-full h-full">
             <VlogCard vlog={vlog} />
