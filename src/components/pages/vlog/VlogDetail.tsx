@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
-import logo2 from "../../../assets/logo2.png";
+// import logo2 from "../../../assets/logo2.png";
 import { Button } from "@/components/ui/button";
 import MapShowCase from "@/components/common/MapShowCase";
 
