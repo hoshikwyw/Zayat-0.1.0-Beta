@@ -4,7 +4,7 @@ import logo2 from "../../assets/logo2.png";
 const VlogCard = ({ vlog }: any) => {
   return (
     <div
-      className="bg-card text-card-foreground border border-border 
+      className=" bg-muted text-card-foreground border border-border 
                  w-full max-w-sm sm:max-w-md lg:max-w-lg 
                  h-[400px] rounded-xl shadow-md backdrop-blur-md 
                  flex flex-col overflow-hidden transition-all duration-300 
@@ -21,7 +21,7 @@ const VlogCard = ({ vlog }: any) => {
 
       {/* Content */}
       <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-lg font-semibold line-clamp-1">{vlog.title}</h3>
+        <h3 className="text-lg text-muted-foreground font-semibold line-clamp-1">{vlog.title}</h3>
         <p className="text-sm text-muted-foreground line-clamp-3 flex-grow">
           {vlog.desc}
         </p>
