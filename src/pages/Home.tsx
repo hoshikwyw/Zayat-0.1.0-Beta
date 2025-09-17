@@ -1,63 +1,33 @@
-import VlogCard from "@/components/common/VlogCard";
-import { supabase } from "@/supabase-client";
-import { useEffect, useState } from "react";
+import { VlogList } from "@/components/pages/home";
+import { useVlogsTotal } from "@/hooks/useVlog";
+import { useState } from "react";
 
 const Home = () => {
-  const [vlogs, setVlogs] = useState<any[]>([]);
-  const [media, setMedia] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
-  const fetchTasks = async () => {
-    const { error, data } = await supabase
-      .from("vlogs")
-      .select("*")
-      .order("created_at", { ascending: true });
+  const { vlogs, totalCount, loading, error } = useVlogsTotal(
+    currentPage,
+    itemsPerPage
+  );
 
-    if (error) {
-      console.error("Error fetching vlogs:", error);
-      return;
+  const handlePageChange = (newPage: number) => {
+    if (newPage >= 1 && newPage <= Math.ceil(totalCount / itemsPerPage)) {
+      setCurrentPage(newPage);
     }
-
-    setVlogs(data || []);
   };
-
-  const fetchImages = async () => {
-    const { data, error } = await supabase.storage.from("zayat").list("", {
-      limit: 100,
-      offset: 0,
-      sortBy: { column: "created_at", order: "desc" },
-    });
-
-    if (error) {
-      console.error("Error fetching images:", error);
-      return;
-    }
-
-    const urls = await Promise.all(
-      data.map(async (item) => {
-        const { data: publicUrlData } = supabase.storage
-          .from("zayat")
-          .getPublicUrl(item.name);
-        return publicUrlData.publicUrl;
-      })
-    );
-
-    setMedia(urls);
-  };
-
-  useEffect(() => {
-    fetchTasks();
-    fetchImages();
-  }, []);
 
   return (
     <div className="flex justify-center w-full px-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-7xl">
-        {vlogs.map((vlog) => (
-          <div key={vlog.id} className="w-full h-full">
-            <VlogCard vlog={vlog} />
-          </div>
-        ))}
-      </div>
+      <VlogList
+        vlogs={vlogs}
+        totalCount={totalCount}
+        loading={loading}
+        error={error}
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 };

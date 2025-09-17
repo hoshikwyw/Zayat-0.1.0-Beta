@@ -1,7 +1,10 @@
 import { Button } from "../ui/button";
 import logo2 from "../../assets/logo2.png";
+import type { IVlogType } from "@/types/vlogType";
+import { Link } from "react-router-dom";
 
-const VlogCard = ({ vlog }: any) => {
+const VlogCard = (props: IVlogType) => {
+  const { vlog } = props;
   return (
     <div
       className=" bg-muted text-card-foreground border border-border 
@@ -29,7 +32,9 @@ const VlogCard = ({ vlog }: any) => {
         {/* Buttons */}
         <div className="w-full flex items-center justify-between mt-auto gap-2">
           <Button className="flex-1">Contact</Button>
-          <Button className="flex-1">View</Button>
+          <Link to={`/vlogs/${vlog.id}`} className="flex-1">
+            <Button className="w-full">View</Button>
+          </Link>
         </div>
       </div>
     </div>
