@@ -36,7 +36,7 @@ const Navbar = () => {
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/vlogs", label: "Vlogs" },
+    // { to: "/vlogs", label: "Vlogs" },
     { to: "/contact", label: "Contact" },
     { to: "/about", label: "About" },
   ];
@@ -59,7 +59,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 py-2">
-          {navLinks.map((link) => (
+          {navLinks?.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}

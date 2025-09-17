@@ -35,7 +35,7 @@ const VlogDetail = ({ vlog, loading, error }: PropType) => {
 
   return (
     <div className="container mx-auto p-4 max-w-4xl">
-      <div className=" flex items-start justify-between">
+      <div className=" flex flex-col items-start justify-between mb-5">
         {/* Back Button */}
         <Link to="/">
           <Button variant="outline" className="mb-6">
@@ -44,19 +44,19 @@ const VlogDetail = ({ vlog, loading, error }: PropType) => {
         </Link>
 
         {/* Title */}
-        <h1 className="text-3xl font-bold">{vlog.title}</h1>
+        <h1 className="text-3xl font-bold">{vlog?.title}</h1>
 
         {/* Meta Information */}
         <div className="flex items-center text-muted-foreground mt-2">
           <span>Updated At</span>
           <span className="mx-2">•</span>
-          <span>{new Date(vlog.created_at).toLocaleDateString()}</span>
+          <span>{new Date(vlog?.created_at).toLocaleDateString()}</span>
         </div>
       </div>
 
       {/* Featured Image */}
       <div className=" w-full flex gap-5">
-        {vlog.images.map((image: string, i: number) => (
+        {vlog?.images?.map((image: string, i: number) => (
           <div key={i} className=" w-80 h-64 md:h-96 overflow-hidden rounded-xl mb-6">
             <img
               src={image}
@@ -73,18 +73,18 @@ const VlogDetail = ({ vlog, loading, error }: PropType) => {
         /> */}
 
       {/* Description */}
-      <p className="text-lg text-muted-foreground mb-6">{vlog.desc}</p>
-      {vlog.contactPh &&
-        vlog.contactPh.map((ph: string) => (
+      <p className="text-lg text-muted-foreground mb-6">{vlog?.desc}</p>
+      {vlog?.contactPh &&
+        vlog?.contactPh.map((ph: string) => (
           <p className="text-lg text-muted-foreground mb-6">{ph}</p>
         ))}
-      {vlog.address &&
-        vlog.address.map((address: string) => (
+      {vlog?.address &&
+        vlog?.address.map((address: string) => (
           <p className="text-lg text-muted-foreground mb-6">{address}</p>
         ))}
-      <p className="text-lg text-muted-foreground mb-6">{vlog.openingTime}</p>
+      <p className="text-lg text-muted-foreground mb-6">{vlog?.openingTime}</p>
 
-      {vlog.location && <MapShowCase location={vlog.location} />}
+      {vlog?.location && <MapShowCase location={vlog?.location} />}
 
       {/* Content */}
       <div
