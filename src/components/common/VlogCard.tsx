@@ -2,11 +2,13 @@ import { Button } from "../ui/button";
 import logo2 from "../../assets/logo2.png";
 
 const VlogCard = ({ vlog }: any) => {
-
   return (
     <div
-      className="bg-card text-card-foreground border border-border w-80 h-[500px] rounded-xl shadow-md 
-                    backdrop-blur-md flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+      className="bg-card text-card-foreground border border-border 
+                 w-full max-w-sm sm:max-w-md lg:max-w-lg 
+                 h-[400px] rounded-xl shadow-md backdrop-blur-md 
+                 flex flex-col overflow-hidden transition-all duration-300 
+                 hover:shadow-lg hover:scale-[1.02]"
     >
       {/* Image */}
       <div className="w-full h-48 overflow-hidden">
@@ -18,16 +20,16 @@ const VlogCard = ({ vlog }: any) => {
       </div>
 
       {/* Content */}
-      <div className="p-4 flex flex-col gap-3 flex-grow">
-        <h3 className="text-lg font-semibold">{vlog.title}</h3>
-        <p className="text-sm text-muted-foreground line-clamp-3">
+      <div className="p-4 flex flex-col flex-grow">
+        <h3 className="text-lg font-semibold line-clamp-1">{vlog.title}</h3>
+        <p className="text-sm text-muted-foreground line-clamp-3 flex-grow">
           {vlog.desc}
         </p>
 
         {/* Buttons */}
         <div className="w-full flex items-center justify-between mt-auto gap-2">
-          <Button>Contact</Button>
-          <Button>View</Button>
+          <Button className="flex-1">Contact</Button>
+          <Button className="flex-1">View</Button>
         </div>
       </div>
     </div>

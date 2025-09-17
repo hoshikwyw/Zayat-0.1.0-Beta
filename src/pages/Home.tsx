@@ -49,12 +49,9 @@ const Home = () => {
     fetchImages();
   }, []);
 
-  console.log(vlogs);
-  console.log("media", media);
-
   return (
-    <div className="flex flex-row gap-4 justify-center w-full">
-      <div className="grid grid-cols-4 gap-4">
+    <div className="flex justify-center w-full px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-7xl">
         {vlogs.map((vlog) => (
           <div key={vlog.id} className="w-full h-full">
             <VlogCard vlog={vlog} />
