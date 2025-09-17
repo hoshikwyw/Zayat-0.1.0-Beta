@@ -24,7 +24,7 @@ export const useVlogsTotal = (page = 1, itemsPerPage = 1) => {
           .range(from, to);
 
         if (error) throw error;
-        setVlogs(data || []);
+        setVlogs((data || []) as never[]);
         setTotalCount(count || 0);
       } catch (err: any) {
         setError(err.message);
