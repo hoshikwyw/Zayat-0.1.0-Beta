@@ -48,19 +48,19 @@ const VlogList = ({
           <p className="text-muted-foreground">No vlogs found.</p>
         </div>
       ) : (
-        <>
-          <PaginationControls
-            currentPage={currentPage}
-            totalCount={totalCount}
-            itemsPerPage={itemsPerPage}
-            onPageChange={onPageChange}
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-7xl mt-5">
+        <div className=" pb-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-7xl">
             {vlogs.map((vlog) => (
               <VlogCard key={vlog?.id} vlog={vlog} />
             ))}
           </div>
-        </>
+            <PaginationControls
+              currentPage={currentPage}
+              totalCount={totalCount}
+              itemsPerPage={itemsPerPage}
+              onPageChange={onPageChange}
+            />
+        </div>
       )}
     </div>
   );
